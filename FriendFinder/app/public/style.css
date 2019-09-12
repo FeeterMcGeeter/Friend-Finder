@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+}
+
+.jumbotron h1 {
+    font-family: 'Merienda', cursive;
+    font-weight: 700;
+    font-size: 60px;
+}
+
+.jumbotron h2 {
+    font-family: 'Varela', sans-serif;
+    font-size: 30px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+/* .btn-lg {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+} */
+
+.btn-primary {
+    color: #fff;
+    background-color: #337AB7;
+    border-color: #2E6DA4;
+}
+
+.btn h4 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.1;
+    margin: 10px 0;
+}
+
