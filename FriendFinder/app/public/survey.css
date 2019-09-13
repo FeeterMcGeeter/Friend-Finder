@@ -1,0 +1,15 @@
+* {
+    box-sizing: border-box;
+}
+
+#title {
+    margin-top: 20px;
+}
+
+#name {
+    margin-bottom: 10px;
+}
+
+.submit {
+    margin-top: 30px;
+}

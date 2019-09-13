@@ -1,48 +1,37 @@
-var path = require("path");
 var friends = require("../data/friends");
+var friendsArray = friends.friends;
 
-module.exports = function(app) {
-    app.get("/api/friends", function(req, res) {
-        res.json(friends);
+module.exports = function (app) {
+    app.get("/api/friends", function (req, res) {
+        res.json(friendsArray);
     });
 
-    app.post("/api/friends", function(req, res) {
+    app.post("/api/friends", function (req, res) {
         var results = req.body;
-        results.name = results.name.replace(/\s+/g, "");
-        results.photo = results.photo.replace(/\s+/g, "");
+        var scores = results.answers;
+        var difference = [];
+        var users = [];
 
-        convertToInteger(results.scores);
+        friendsArray.forEach(function (user) {
+            var matchScore = user.answers;
+            var totalDifference = 0;
 
-        var newScores = results.scores;
-        var nameMatch = "";
-        var photoMatch = "";
-        var totalDifference = 10000;
-
-        for (var i = 0; i < friends.length; i++) {
-            var difference = 0;
-
-            for (var j = 0; j < friends[i].length; j++) {
-                difference += Math.abs(friends[i].scores[j] - newScores[j]);
-            }
-
-            if (difference < totalDifference) {
-                totalDifference = difference;
-                nameMatch = friends[i].name;
-                photoMatch = friends[i].photo;
-            }
-        }
-
-        friends.push(results);
-        res.json({
-            status: "OK",
-            nameMatch: nameMatch,
-            photoMatch = photoMatch
-        })
-    })
-};
-
-function convertToInteger(results) {
-    for (var k = 0; k < results.length; k++) {
-        results[k] = parseInt(results[k]);
-    }
+            for (var i = 0; i < matchScore.length; i++) {
+                totalDifference += Math.abs(matchScore[i] - scores[i]);
+            };
+            difference.push(totalDifference);
+            difference.sort();
+            topScore = difference[0];
+            users.push({
+                name: user.name,
+                photo: user.photo,
+                difference: totalDifference
+            });
+            var bestMatch = users.find(function (element) {
+                return element.difference === topScore;
+            });
+            friendsArray.push(user);
+            res.json(bestMatch);
+        });
+    });
 };
