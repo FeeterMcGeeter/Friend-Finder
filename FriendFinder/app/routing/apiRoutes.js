@@ -1,37 +1,35 @@
+// ===== REQUIRING THE FRIENDS.JS DATA =====
 var friends = require("../data/friends");
-var friendsArray = friends.friends;
 
 module.exports = function (app) {
     app.get("/api/friends", function (req, res) {
-        res.json(friendsArray);
+        res.json(friends);
     });
 
     app.post("/api/friends", function (req, res) {
-        var results = req.body;
-        var scores = results.answers;
-        var difference = [];
-        var users = [];
+        var userScore = req.body.scores;
+        var scoresArray = [];
+        var bestMatch = 0;
 
-        friendsArray.forEach(function (user) {
-            var matchScore = user.answers;
-            var totalDifference = 0;
+        // ===== LOOPING THRU THE USER'S SCORES AND COMPARING TO SCORES FROM FRIENDS.JS ===== 
+        for (var i = 0; i < friends.length; i++) {
+            var diff = 0;
+            for (var j = 0; j < userScore.length; j++) {
 
-            for (var i = 0; i < matchScore.length; i++) {
-                totalDifference += Math.abs(matchScore[i] - scores[i]);
-            };
-            difference.push(totalDifference);
-            difference.sort();
-            topScore = difference[0];
-            users.push({
-                name: user.name,
-                photo: user.photo,
-                difference: totalDifference
-            });
-            var bestMatch = users.find(function (element) {
-                return element.difference === topScore;
-            });
-            friendsArray.push(user);
-            res.json(bestMatch);
-        });
-    });
+                // ===== CREATING ABSOLUTE NUMBERS TO AVOID NEGATIVE RESULTS =====
+                diff += (Math.abs(parseInt(friends[i].scores[j]) - parseInt(userScore[j])));
+            }
+            scoresArray.push(diff);
+        }
+        for (var i = 0; i < scoresArray.length; i++) {
+            if (scoresArray[i] <= scoresArray[bestMatch]) {
+                bestMatch = i;
+            }
+        }
+
+        // ===== RETURNS THE BEST MATCH =====
+        var userMatch = friends[bestMatch];
+        res.json(userMatch);
+        friends.push(req.body);
+    })
 };

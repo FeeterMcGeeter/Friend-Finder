@@ -6,11 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Friend Finder Survey</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Merienda:400,700|Varela&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://kit.fontawesome.com/f98cc017d1.js"></script>
-    <link rel="stylesheet" href="survey.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="css/survey.css">
 </head>
 
 <body>
@@ -24,11 +22,12 @@
         <input type="text" id="photo" class="form-control" required>
         <hr>
 
-        <form>
+        <form action="">
             <div class="form-group">
                 <h3><strong>Question 1</strong></h3>
                 <h4>You are outgoing and love to meet new people.</h4>
-                <select name="q1">
+                <select class="chosen-select" id="q1" name="q1">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -39,7 +38,8 @@
             <div class="form-group">
                 <h3><strong>Question 2</strong></h3>
                 <h4>You think the men should have to pay on the first date.</h4>
-                <select name="q2">
+                <select class="chosen-select" id="q2" name="q2">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -52,7 +52,8 @@
                 <h5>
                     <h4>You believe marijuana should be legal in every state.</h4>
                 </h5>
-                <select name="q3">
+                <select class="chosen-select" id="q3" name="q3">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -65,7 +66,8 @@
                 <h5>
                     <h4>You love to go to sporting events rather than watching them on tv.</h4>
                 </h5>
-                <select name="q4">
+                <select class="chosen-select" id="q4" name="q4">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -76,7 +78,8 @@
             <div class="form-group">
                 <h3><strong>Question 5</strong></h3>
                 <h4>You are the life of every party.</h4>
-                <select name="q5">
+                <select class="chosen-select" id="q5" name="q5">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -87,7 +90,8 @@
             <div class="form-group">
                 <h3><strong>Question 6</strong></h3>
                 <h4>You are interested in politics.</h4>
-                <select name="q6">
+                <select class="chosen-select" id="q6" name="q6">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -98,7 +102,8 @@
             <div class="form-group">
                 <h3><strong>Question 7</strong></h3>
                 <h4>You are fine with your significant other having control over the tv.</h4>
-                <select name="q7">
+                <select class="chosen-select" id="q7" name="q7">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -109,7 +114,8 @@
             <div class="form-group">
                 <h3><strong>Question 8</strong></h3>
                 <h4>You believe in flat Earth.</h4>
-                <select name="q8">
+                <select class="chosen-select" id="q8" name="q8">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -120,7 +126,8 @@
             <div class="form-group">
                 <h3><strong>Question 9</strong></h3>
                 <h4>You believe in conspiracy theories.</h4>
-                <select name="q9">
+                <select class="chosen-select" id="q9" name="q9">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -131,7 +138,8 @@
             <div class="form-group">
                 <h3><strong>Question 10</strong></h3>
                 <h4>You believe in love at first site.</h4>
-                <select name="q10">
+                <select class="chosen-select" id="q10" name="q10">
+                    <option value="">Select Option</option>
                     <option value="1">1 (Strongly Disagree)</option>
                     <option value="2">2</option>
                     <option value="3">3 (Neutral)</option>
@@ -159,24 +167,27 @@
         </footer>
     </div>
 
-    <div id="resultsModal" class="modal bd-example-modal-lg" role="dialog" tabindex="-1" style="display: none;">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <!-- ===== RESULTS MODAL ===== -->
+    <div id="resultModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- ===== MODAL CONTENT ===== -->
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title">Your match is...</h5>
+                    <h4 class="modal-title">Your best match! </h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
-                    <button class="close" type="button"></button>
-                    <h2 id="matchName"></h2>
-                    <img src="" alt="" id="matchPhoto" class="img-fluid">
+                <div class="modal-body" id="modalMatch">
+                
                 </div>
             </div>
+
         </div>
     </div>
 
-    <script>
-        var modal = 
-    </script>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="/javascript/survey.js" type="text/javascript"></script>
 </body>
 
 </html>

@@ -4,40 +4,38 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Friend Finder</title>
+    <title>Rick and Morty's Friend Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/f98cc017d1.js"></script>
-    <link rel="stylesheet" href="home.css">
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/home.css" type="text/css" />
 </head>
 
 <body>
     <div class="container">
         <div class="jumbotron">
-            <h1 class="display-4"><i class="fab fa-facebook-square" id="facebookIcon"></i> Friend Finder</h1>
+            <h1 class="display-4">Rick and Morty's Friend Finder</h1>
             <hr class="my-4">
             <h2>Answer a few basic questions.</h2>
-            <h2>Then find the friend with the greatest compatibility!</h2>
+            <h2>Then find the character with the greatest compatibility!</h2>
             <div>
-                <a href="./survey.html">
+                <a href="/survey">
                     <button class="btn btn-lg btn-primary" type="button">
-                        <h4>
-                            <i class="fas fa-list-alt"></i> Go to Survey
-                        </h4>
+                        <h4>Go to Survey</h4>
                     </button>
                 </a>
             </div>
         </div>
+    </div>
 
+    <div class="container" id="footer">
         <footer class="footer">
-            <div class="container">
-                <p>
-                    <a href="/api/friends">API Friends List</a>
-                    |
-                    <a href="https://github.com/FeeterMcGeeter/Friend-Finder" target="_blank">GitHub Repo</a>
-                </p>
-            </div>
+            <p>
+                <a href="/api/friends">API Friends List</a>
+                |
+                <a href="https://github.com/FeeterMcGeeter/Friend-Finder" target="_blank">GitHub Repo</a>
+            </p>
         </footer>
     </div>
 
