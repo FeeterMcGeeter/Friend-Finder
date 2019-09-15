@@ -1,19 +1,3 @@
-// var config = {
-//     ".chosen-select": {},
-//     ".chosen-select-deselect": {
-//         allow_single_deselect: true
-//     },
-//     ".chosen-select-no-single": {
-//         disable_search_threshold: 10
-//     },
-//     ".chosen-select-no-results": {
-//         no_results_text: "Nothing found!"
-//     },
-//     ".chosen-select-width": {
-//         width: "95%"
-//     }
-// };
-
 // ===== CAPTURING THE SURVEY INPUT =====
 $("#submit").on("click", function (event) {
     event.preventDefault();
