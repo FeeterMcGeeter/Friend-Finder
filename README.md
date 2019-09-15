@@ -11,15 +11,15 @@ This is a Friend Finder app with characters from Rick and Morty.  The user will 
 * Express and Path dependencies
 
 ## Screenshots
-Main Title
+#### Main Title
 ![](/FriendFinder/app/public/images/main-title.png)
 
-Survey Page
+#### Survey Page
 ![](/FriendFinder/app/public/images/survey-one.png)
 ![](/FriendFinder/app/public/images/survey-two.png)
 
-Best Match Modal
+#### Best Match Modal
 ![](/FriendFinder/app/public/images/modal.png)
 
-Demo of App
+#### Demo of App
 ![](https://drive.google.com/file/d/1vScIuna1JSwS1PgAJECYoyCOa3QJSJdB/view)
