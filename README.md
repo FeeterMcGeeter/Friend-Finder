@@ -12,8 +12,8 @@ This is a Friend Finder app with characters from Rick and Morty.  The user will 
 
 ## Screenshots
 Main Title
-![](./images/main-title.png)
+![](/FriendFinder/app/public/images/main-title.png)
 
 Survey Page
-![](./images/survey-one.png)
-![](./images/survey-two.png)
+![](/FriendFinder/app/public/images/survey-one.png)
+![](/FriendFinder/app/public/images/survey-two.png)
