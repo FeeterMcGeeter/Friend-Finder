@@ -24,3 +24,5 @@ This is a Friend Finder app with characters from Rick and Morty.  The user will 
 #### Demo of App
 [Link Here](https://drive.google.com/file/d/1vScIuna1JSwS1PgAJECYoyCOa3QJSJdB/view)
 
+### Deployed on Heroku
+https://cryptic-shelf-41762.herokuapp.com/
