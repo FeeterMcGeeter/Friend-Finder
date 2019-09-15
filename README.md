@@ -12,15 +12,17 @@ This is a Friend Finder app with characters from Rick and Morty.  The user will 
 
 ## Screenshots
 #### Main Title
-![](/FriendFinder/app/public/images/main-title.png)
+![](/app/public/images/main-title.png)
 
 #### Survey Page
-![](/FriendFinder/app/public/images/survey-one.png)
-![](/FriendFinder/app/public/images/survey-two.png)
+![](/app/public/images/survey-one.png)
+![](/app/public/images/survey-two.png)
 
 #### Best Match Modal
-![](/FriendFinder/app/public/images/modal.png)
+![](/app/public/images/modal.png)
 
 #### Demo of App
 [Link Here](https://drive.google.com/file/d/1vScIuna1JSwS1PgAJECYoyCOa3QJSJdB/view)
 
+### Deployed on Heroku
+https://cryptic-shelf-41762.herokuapp.com/
