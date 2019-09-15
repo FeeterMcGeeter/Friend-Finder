@@ -2,13 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background: url(../images/wallpaper.jpeg) no-repeat center center fixed;
-    background-size: cover;
-    height: 100%;
-    overflow: hidden;
-}
-
 .container {
     display: flex;
     flex-direction: column;
@@ -17,10 +10,11 @@ body {
     text-align: center;
 }
 
-.jumbotron h1 {
+.display-4 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: 700;
     font-size: 60px;
+    text-shadow: 0px 0px 10px #FFFFFF;
 }
 
 .jumbotron h2 {
@@ -28,25 +22,23 @@ body {
     font-size: 30px;
     line-height: 1.1;
     margin-bottom: 20px;
+    text-shadow: 0px 0px 10px #FFFFFF;
 }
 
 .jumbotron h2:nth-of-type(2) {
     margin-bottom: 30px;
 }
 
-#facebookIcon {
-    color: #337ab7;
-}
-
-.btn-primary {
+#portalButton {
     color: #fff;
-    background-color: #337ab7;
-    border-color: #337ab7;
+    background-color: #69c8ec;
+    border-color: #808080;
     outline: none;
+    color: #000;
 }
 
-.btn-primary:hover {
-    background-color: #00008B;
+#portalButton:hover {
+    background-color: #97ce4c;
 }
 
 .btn h4 {
@@ -56,7 +48,17 @@ body {
     margin: 10px 0;
 }
 
-#footer {
+#links {
     text-align: left;
+    margin-top: 0;
+}
+
+#imageContainer {
+    margin-top: 0;
+}
+
+#imageLogo {
+    width: 500px;
+    height: 150px;
 }
 
